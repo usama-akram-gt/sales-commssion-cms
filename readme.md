@@ -3,18 +3,18 @@
 
 In this project I use the latest version of the Laravel framework, as well as the latest version of vue js. also implementing the new bootstrap 4 framework, using cards, flex, buttons and modal.
 
-![crud.png](https://github.com/usama-akram-gt/sales-commssion-cms/tree/master/resources/assets/images/screenshot1.png)
+![crud.png](https://github.com/usama-akram-gt/sales-commssion-cms/blob/master/resources/assets/images/screenshot1.PNG)
 
 1.- Install project.
 
 ```cmd
-	composer update
+composer update
 ```
 
 2.- Install vue dependencies.
 
 ```cmd
-    npm install
+npm install
 ```
 3.- Copy .env.example to new file .env
 
@@ -24,12 +24,12 @@ cp .env.example .env
 4.- Configure environment file .env
 	Modify access to the database.
 ```php
-	DB_CONNECTION=mysql
-	DB_HOST=127.0.0.1
-	DB_PORT=3306
-	DB_DATABASE=laravel_vue
-	DB_USERNAME=*****
-	DB_PASSWORD=*****
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_vue
+DB_USERNAME=*****
+DB_PASSWORD=*****
 ```
 
 5.- Generating key.
@@ -44,4 +44,4 @@ php artisan key:generate
 php artisan migrate
 ```
 
-13.- Execute the following command <code>npm run dev</code>
+7.- Execute the following command <code>npm run dev</code>

@@ -3,7 +3,7 @@
 
         <div class="row pt-5">
             <div class="col-lg-8 d-flex">
-                <img src="https://laravel-vue.test/assets/images/logo.png">
+                <img src="https://sales-commssion-cms.test/assets/images/logo.png">
             </div>
 
             <div class="col-lg-4 dropdown">
@@ -12,7 +12,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Profile</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="#" @click.prevent="logout">Logout</a>
                 </div>
             </div>
         </div>
@@ -397,6 +397,11 @@
             deleteItem( item ) {
                 axios.delete('vue-items/' + item.id).then( (response) => {
                     this.getItems();
+                });
+            },
+            logout(){
+                axios.post('/logout').then( (response) => {
+                    window.location.href = '/login';
                 });
             }
         }

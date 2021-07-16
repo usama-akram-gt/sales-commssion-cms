@@ -50386,6 +50386,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.delete('vue-items/' + item.id).then(function (response) {
                 _this4.getItems();
             });
+        },
+        logout: function logout() {
+            axios.post('/logout').then(function (response) {
+                window.location.href = '/login';
+            });
         }
     }
 });
@@ -50400,7 +50405,55 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "row pt-5" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-4 dropdown" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "btn btn-secondary dropdown-toggle float-right align-middle",
+            attrs: {
+              type: "button",
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false"
+            }
+          },
+          [_vm._v("\n                Sales Agent\n            ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown-menu",
+            attrs: { "aria-labelledby": "dropdownMenuButton" }
+          },
+          [
+            _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+              _vm._v("Profile")
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "dropdown-item",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.logout.apply(null, arguments)
+                  }
+                }
+              },
+              [_vm._v("Logout")]
+            )
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("br"),
     _c("br"),
@@ -51304,47 +51357,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row pt-5" }, [
-      _c("div", { staticClass: "col-lg-8 d-flex" }, [
-        _c("img", {
-          attrs: { src: "https://laravel-vue.test/assets/images/logo.png" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4 dropdown" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "btn btn-secondary dropdown-toggle float-right align-middle",
-            attrs: {
-              type: "button",
-              id: "dropdownMenuButton",
-              "data-toggle": "dropdown",
-              "aria-haspopup": "true",
-              "aria-expanded": "false"
-            }
-          },
-          [_vm._v("\n                Sales Agent\n            ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dropdown-menu",
-            attrs: { "aria-labelledby": "dropdownMenuButton" }
-          },
-          [
-            _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-              _vm._v("Profile")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-              _vm._v("Logout")
-            ])
-          ]
-        )
-      ])
+    return _c("div", { staticClass: "col-lg-8 d-flex" }, [
+      _c("img", {
+        attrs: {
+          src: "https://sales-commssion-cms.test/assets/images/logo.png"
+        }
+      })
     ])
   },
   function() {

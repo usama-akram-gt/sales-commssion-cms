@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('sales', 'SaleController@sales');
-Route::resource('vue-items', 'SaleController');
 Auth::routes();
+Route::get('/', function () { return view('welcome'); });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('sales', 'SaleController@sales')->name('sales');
+    Route::resource('vue-items', 'SaleController');
+});

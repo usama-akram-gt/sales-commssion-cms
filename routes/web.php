@@ -11,10 +11,21 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::get('/', function () { return view('welcome'); });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('sales', 'SaleController@sales')->name('sales');
-    Route::resource('vue-items', 'SaleController');
+    Route::group(['middleware' => 'role:sales'], function () {
+        //sales
+        Route::get('sales', 'SaleController@sales')->name('sales');
+        Route::resource('vue-items', 'SaleController');
+    });
+    Route::group(['middleware' => 'role:admin'], function () {
+        //sales
+        Route::get('admin', 'AdminController@index')->name('admin');
+    });
+    Route::group(['middleware' => 'role:manager'], function () {
+        //sales
+        Route::get('manager', 'ManagerController@index')->name('manager');
+    });
 });

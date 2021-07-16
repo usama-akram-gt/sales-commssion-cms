@@ -1,5 +1,5 @@
 @extends( 'layouts.app' )
 
 @section( 'content' )
-	<sale></sale>
+	<admin></admin>
 @endsection
